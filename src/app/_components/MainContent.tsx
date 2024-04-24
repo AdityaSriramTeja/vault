@@ -1,7 +1,8 @@
-import { Plus, SearchIcon } from 'lucide-react';
-import React from 'react'
-import AccountCard from './AccountCard';
-import { Button } from '@/components/ui/button';
+import { SearchIcon } from "lucide-react";
+import React from "react";
+import AccountCard from "./AccountCard";
+import CreateAccountForm from "@/components/CreateAccountForm";
+import { Input } from "@/components/ui/input";
 
 export default function MainContent() {
   return (
@@ -9,12 +10,14 @@ export default function MainContent() {
       <h2 className="text-xl font-bold capitalize"> All items </h2>
       <div className="bg-secondary px-3 py-1 rounded-md flex items-center gap-x-2 opacity-75">
         {" "}
-        <SearchIcon size={20} /> Search...{" "}
+        <SearchIcon size={20} />
+        <input
+          placeholder="Search..."
+          className="bg-transparent focus:outline-none border-none"
+        />
       </div>
-      <Button className="bg-blue-600 hover:bg-blue-700  flex items-center gap-x-2  mx-auto opacity-75">
-        {" "}
-        <Plus size={20} /> Add new item{" "}
-      </Button>
+
+      <CreateAccountForm />
       <hr />
       <AccountCard label={"Google"} credential={"test@gmail.com"} />
       <AccountCard label={"Google"} credential={"test@gmail.com"} />
